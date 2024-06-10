@@ -1,17 +1,10 @@
 export const Person = ({ person }) => {
   const { name, age, sex, isMarried, partnerName } = person;
 
-  let marriedOrNot;
+  const ManOrWomen =
+    sex === 'm' ? `${partnerName} is my wife` : `${partnerName} is my husband`;
 
-  if (isMarried) {
-    if (sex === 'm') {
-      marriedOrNot = `${partnerName} is my wife`;
-    } else if (sex === 'f') {
-      marriedOrNot = `${partnerName} is my husband`;
-    }
-  } else {
-    marriedOrNot = `I am not married`;
-  }
+  const marriedOrNot = isMarried ? ManOrWomen : `I am not married`;
 
   return (
     <section className="Person">
